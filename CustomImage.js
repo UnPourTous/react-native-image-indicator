@@ -15,7 +15,7 @@ import React, {Component} from 'react'
 export default class CustomImage extends Component {
   static propTypes = {
     source: React.PropTypes.string,
-    errorImage: React.PropTypes.string,
+    errorImage: React.PropTypes.number,
     defaultImage: React.PropTypes.number,
     onClick: React.PropTypes.func,
     indicator: React.PropTypes.func,
@@ -145,11 +145,11 @@ export default class CustomImage extends Component {
     this.bubbleEvent('onLoad', event)
   }
 
-  onImageLoadError (error) {
+  onImageLoadError (event) {
     this.setState({
       loading: false,
       progress: 0,
-      headIcon: require(this.props.errorImage)
+      headIcon: this.props.errorImage ? this.props.errorImage : null
     })
     this.bubbleEvent('onError', event)
   }

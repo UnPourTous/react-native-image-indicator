@@ -9,7 +9,7 @@
 	"dependencies": {
 		"react": "^15.4.2",
 		"react-native": "0.40.0",
-		"@unpourtous/react-native-search-list": "file:../"
+		"@unpourtous/react-native-image-indicator": "file:../"
 	},
 	"jest": {
 		"preset": "react-native"
