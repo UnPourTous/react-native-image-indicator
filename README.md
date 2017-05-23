@@ -2,7 +2,7 @@
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-### React Native Search List
+### React Native Indicator Image 
 
 A component for image with indicator and default image<br>
 
@@ -13,8 +13,6 @@ A component for image with indicator and default image<br>
 `$ npm install @unpourtous/react-native-image-indicator --save`
 
 ## Usage
-
-To Use SearchList, need a array of object as data source,and each object has searchStr property:
 
 ```js
 import CustomImage from '@unpourtous/react-native-image-indicator'
