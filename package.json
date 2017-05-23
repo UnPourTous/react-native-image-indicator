@@ -34,12 +34,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/UnPourTous/react-native-search-list.git"
+    "url": "git+https://github.com/UnPourTous/react-native-image-indicator.git"
   },
   "bugs": {
-    "url": "https://github.com/UnPourTous/react-native-search-list/issues"
+    "url": "https://github.com/UnPourTous/react-native-image-indicator/issues"
   },
-  "homepage": "https://github.com/UnPourTous/react-native-search-list#readme",
+  "homepage": "https://github.com/UnPourTous/react-native-image-indicator#readme",
   "peerDependency": {
     "react-native": ">= 0.17"
   }
