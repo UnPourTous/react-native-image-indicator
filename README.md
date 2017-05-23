@@ -1,4 +1,4 @@
-# A component for ListView can search items, support chinese alphabetical
+# A component for image with indicator and default image
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
@@ -68,5 +68,5 @@ type: `number`
 defaultValue: `50`
 
 ## License
-This library is distributed under MIT Licence.
+This library is distributed under MIT Licence.<br>
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FUnPourTous%2Freact-native-image-indicator.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2FUnPourTous%2Freact-native-image-indicator?ref=badge_large)
