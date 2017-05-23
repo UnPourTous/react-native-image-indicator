@@ -30,7 +30,7 @@ export default class example extends Component {
       }}>
         <CustomImage
           style={{alignItems: 'center', justifyContent: 'center', height:300,width:300, backgroundColor: '#fdf9e6'}}
-          source={'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2527908864,2652178879&fm=23&gp=0.jpg'}
+          source={'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496148333&di=fdcac00c65ba9c75ba102380d9c27c87&imgtype=jpg&er=1&src=http%3A%2F%2Fimg2081.poco.cn%2Fmypoco%2Fmyphoto%2F20111110%2F01%2F64030449201111100118289800869654960_068.jpg'}
           defaultImage={require('./images/default.jpg')}
           errorImage={require('./images/error.png')}
         />
