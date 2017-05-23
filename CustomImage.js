@@ -29,10 +29,18 @@ export default class CustomImage extends Component {
   constructor (props, context) {
     super(props, context)
 
+    let source = null
+    if (props.source) {
+      if (props.source.uri) {
+        source = props.source
+      } else {
+        source = {uri: props.source}
+      }
+    }
     this.state = {
       loading: false,
       progress: 0,
-      headIcon: {uri: props.source} || null,
+      headIcon: source,
       thresholdReached: !props.threshold
     }
   }
@@ -100,10 +108,18 @@ export default class CustomImage extends Component {
   }
 
   loadImage (url) {
+    let source = null
+    if (props.source) {
+      if (props.source.uri) {
+        source = props.source
+      } else {
+        source = {uri: props.source}
+      }
+    }
     this.setState({
       loading: false,
       progress: 0,
-      headIcon: {uri: url} || null
+      headIcon: source
     })
   }
 
