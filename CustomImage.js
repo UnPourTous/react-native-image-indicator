@@ -6,18 +6,16 @@
 import {
   View,
   Image,
-  ActivityIndicator,
-  TouchableOpacity
+  ActivityIndicator
 } from 'react-native'
 
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 export default class CustomImage extends Component {
   static propTypes = {
     source: React.PropTypes.string,
     errorImage: React.PropTypes.number,
     defaultImage: React.PropTypes.number,
-    onClick: React.PropTypes.func,
     indicator: React.PropTypes.func,
     indicatorProps: React.PropTypes.object,
     renderIndicator: React.PropTypes.func,
@@ -66,19 +64,17 @@ export default class CustomImage extends Component {
       }
     }
     return (
-      <TouchableOpacity onPress={this.props.onClick}>
-        <Image
-          style={style}
-          source={this.state.headIcon}
-          defaultSource={this.props.defaultImage ? this.props.defaultImage : null}
-          loadingIndicatorSource={this.props.defaultImage ? this.props.defaultImage : null}
-          onError={this.onImageLoadError.bind(this)}
-          onProgress={this.handleProgress.bind(this)}
-          onLoad={this.onLoad.bind(this)}
-          onLoadStart={this.onStart.bind(this)}>
-          {content}
-        </Image>
-      </TouchableOpacity>
+      <Image
+        style={style}
+        source={this.state.headIcon}
+        defaultSource={this.props.defaultImage ? this.props.defaultImage : null}
+        loadingIndicatorSource={this.props.defaultImage ? this.props.defaultImage : null}
+        onError={this.onImageLoadError.bind(this)}
+        onProgress={this.handleProgress.bind(this)}
+        onLoad={this.onLoad.bind(this)}
+        onLoadStart={this.onStart.bind(this)}>
+        {content}
+      </Image>
     )
   }
 
