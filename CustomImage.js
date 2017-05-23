@@ -13,7 +13,7 @@ import React, { Component } from 'react'
 
 export default class CustomImage extends Component {
   static propTypes = {
-    source: React.PropTypes.string,
+    source: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]),
     errorImage: React.PropTypes.number,
     defaultImage: React.PropTypes.number,
     indicator: React.PropTypes.func,
