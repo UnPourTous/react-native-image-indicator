@@ -17,12 +17,11 @@ A component for image with indicator and default image<br>
 ```js
 import CustomImage from '@unpourtous/react-native-image-indicator'
 
-  <CustomImage
-          style={{alignItems: 'center', justifyContent: 'center', height:300,width:300, backgroundColor: '#fdf9e6'}}
-          source={'image url'}
-          defaultImage={require('./images/default.jpg')}
-          errorImage={require('./images/error.png')}
-        />
+<CustomImage
+  style={{alignItems: 'center', justifyContent: 'center', height:300,width:300, backgroundColor: '#fdf9e6'}}
+  source={'image url'}
+  defaultImage={require('./images/default.jpg')}
+  errorImage={require('./images/error.png')} />
 ```
 ## API
 
