@@ -25,7 +25,7 @@ import CustomImage from '@unpourtous/react-native-image-indicator'
 ```
 ## API
 
-prop | type | desc 
+Props | Type | Description
 --- | --- | --- 
 source | string | The remote URL image source.
 defaultImage | number | The image before remote image loaded
