@@ -1,10 +1,10 @@
-# A component for image with indicator and default image
+# A Image Component with Indicator, Default Image and Error Default Image
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 ### React Native Indicator Image 
 
-A component for image with indicator and default image<br>
+A image component with indicator and error default image
 
 <img src='https://github.com/UnPourTous/react-native-image-indicator/blob/master/screenshots/react-native-image-indicator-demo.gif?raw=true' />
 
@@ -25,44 +25,15 @@ import CustomImage from '@unpourtous/react-native-image-indicator'
 ```
 ## API
 
-Props
------
-
-### `source`
-The remote URL image source.
-
-type: `string`
-
-### `defaultImage`
-The image before remote image loaded
-
-type: `number`
-
-### `errorImage`
-The image when remote image loade failed
-
-type: `number`
-
-### `renderIndicator`
-the function that render indicator component(exclusion indicator when renderIndicator setted)
-
-type: `function`
-
-### `indicator`
-the indicator component when image is loading
-
-type: `function`
-
-### `indicatorProps`
-the props of indicator component 
-
-type: `object`
-
-### `threshold`
-delay milliseconds before indicator component show
-
-type: `number`
-defaultValue: `50`
+prop | type | desc 
+--- | --- | --- 
+source | string | The remote URL image source.
+defaultImage | number | The image before remote image loaded
+errorImage | number | The image when remote image loade failed
+renderIndicator | function | The function that render indicator component(exclusion indicator when renderIndicator setted)
+indicator | function | The indicator component when image is loading
+indicatorProps | object | The props of indicator component 
+threshold | number | Delay before indicator component show in milliseconds, default value 50.
 
 ## License
 This library is distributed under MIT Licence.<br>
