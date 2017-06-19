@@ -109,11 +109,11 @@ export default class CustomImage extends Component {
 
   loadImage (url) {
     let source = null
-    if (props.source) {
-      if (props.source.uri) {
-        source = props.source
+    if (url) {
+      if (url.uri) {
+        source = url
       } else {
-        source = {uri: props.source}
+        source = {uri: url}
       }
     }
     this.setState({
