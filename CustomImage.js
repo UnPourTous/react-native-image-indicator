@@ -10,6 +10,7 @@ import {
 } from 'react-native'
 
 import React, { Component } from 'react'
+import CachedImage from 'react-native-cached-image'
 
 export default class CustomImage extends Component {
   static propTypes = {
@@ -72,7 +73,7 @@ export default class CustomImage extends Component {
       }
     }
     return (
-      <Image
+      <CachedImage
         style={style}
         source={this.state.headIcon}
         defaultSource={this.props.defaultImage ? this.props.defaultImage : null}
@@ -82,7 +83,7 @@ export default class CustomImage extends Component {
         onLoad={this.onLoad.bind(this)}
         onLoadStart={this.onStart.bind(this)}>
         {content}
-      </Image>
+      </CachedImage>
     )
   }
 
