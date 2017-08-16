@@ -41,9 +41,16 @@ export default class CustomImage extends Component {
     this.state = {
       loading: false,
       progress: 0,
+      opacity: 0,
       headIcon: source,
       thresholdReached: !props.threshold
     }
+
+    this._showImage = this._showImage.bind(this)
+  }
+
+  _showImage() {
+    this.setState({opacity: 1})
   }
 
   render () {
@@ -74,13 +81,14 @@ export default class CustomImage extends Component {
     }
     return (
       <CachedImage
-        style={style}
+        style={[style, {opacity: this.state.opacity}]}
         source={this.state.headIcon}
         defaultSource={this.props.defaultImage ? this.props.defaultImage : null}
         loadingIndicatorSource={this.props.defaultImage ? this.props.defaultImage : null}
         onError={this.onImageLoadError.bind(this)}
         onProgress={this.handleProgress.bind(this)}
         onLoad={this.onLoad.bind(this)}
+        onLoadEnd={this._showImage}
         onLoadStart={this.onStart.bind(this)}>
         {content}
       </CachedImage>
