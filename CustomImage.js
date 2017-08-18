@@ -42,7 +42,7 @@ export default class CustomImage extends Component {
       loading: false,
       progress: 0,
       opacity: 0,
-      headIcon: source,
+      source,
       thresholdReached: !props.threshold
     }
 
@@ -82,7 +82,7 @@ export default class CustomImage extends Component {
     return (
       <CachedImage
         style={[style, {opacity: this.state.opacity}]}
-        source={this.state.headIcon}
+        source={this.state.source}
         defaultSource={this.props.defaultImage ? this.props.defaultImage : null}
         loadingIndicatorSource={this.props.defaultImage ? this.props.defaultImage : null}
         onError={this.onImageLoadError.bind(this)}
@@ -128,7 +128,7 @@ export default class CustomImage extends Component {
     this.setState({
       loading: false,
       progress: 0,
-      headIcon: source
+      source
     })
   }
 
@@ -170,7 +170,7 @@ export default class CustomImage extends Component {
     this.setState({
       loading: false,
       progress: 0,
-      headIcon: this.props.errorImage ? this.props.errorImage : null
+      source: this.props.errorImage ? this.props.errorImage : {}
     })
     this.bubbleEvent('onError', event)
   }
