@@ -170,7 +170,7 @@ export default class CustomImage extends Component {
     this.setState({
       loading: false,
       progress: 0,
-      source: this.props.errorImage ? this.props.errorImage : null
+      source: this.props.errorImage ? this.props.errorImage : {}
     })
     this.bubbleEvent('onError', event)
   }
