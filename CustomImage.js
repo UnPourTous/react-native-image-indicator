@@ -10,6 +10,7 @@ import {
 } from 'react-native'
 
 import React, { Component } from 'react'
+import CachedImage from 'react-native-cached-image'
 
 export default class CustomImage extends Component {
   static propTypes = {
@@ -40,9 +41,16 @@ export default class CustomImage extends Component {
     this.state = {
       loading: false,
       progress: 0,
-      headIcon: source,
+      opacity: 0,
+      source,
       thresholdReached: !props.threshold
     }
+
+    this._showImage = this._showImage.bind(this)
+  }
+
+  _showImage() {
+    this.setState({opacity: 1})
   }
 
   render () {
@@ -72,17 +80,18 @@ export default class CustomImage extends Component {
       }
     }
     return (
-      <Image
-        style={style}
-        source={this.state.headIcon}
+      <CachedImage
+        style={[style, {opacity: this.state.opacity}]}
+        source={this.state.source}
         defaultSource={this.props.defaultImage ? this.props.defaultImage : null}
         loadingIndicatorSource={this.props.defaultImage ? this.props.defaultImage : null}
         onError={this.onImageLoadError.bind(this)}
         onProgress={this.handleProgress.bind(this)}
         onLoad={this.onLoad.bind(this)}
+        onLoadEnd={this._showImage}
         onLoadStart={this.onStart.bind(this)}>
         {content}
-      </Image>
+      </CachedImage>
     )
   }
 
@@ -119,7 +128,7 @@ export default class CustomImage extends Component {
     this.setState({
       loading: false,
       progress: 0,
-      headIcon: source
+      source
     })
   }
 
@@ -161,7 +170,7 @@ export default class CustomImage extends Component {
     this.setState({
       loading: false,
       progress: 0,
-      headIcon: this.props.errorImage ? this.props.errorImage : null
+      source: this.props.errorImage ? this.props.errorImage : {}
     })
     this.bubbleEvent('onError', event)
   }
