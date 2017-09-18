@@ -89,9 +89,9 @@ export default class CustomImage extends Component {
         source={this.state.source}
         defaultSource={this.props.defaultImage ? this.props.defaultImage : null}
         loadingIndicatorSource={this.props.defaultImage ? this.props.defaultImage : null}
-        onError={() => this.onImageLoadError.bind(this)}
+        onError={this.onImageLoadError.bind(this)}
         onProgress={this.handleProgress.bind(this)}
-        onLoad={() => this.onLoad.bind(this)}
+        onLoad={this.onLoad.bind(this)}
         onLoadEnd={this.showImage.bind(this)}
         onLoadStart={this.onStart.bind(this)}>
         {content}
