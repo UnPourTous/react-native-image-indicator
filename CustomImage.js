@@ -45,12 +45,13 @@ export default class CustomImage extends Component {
       source,
       thresholdReached: !props.threshold
     }
-
-    this._showImage = this._showImage.bind(this)
   }
 
-  _showImage() {
-    this.setState({opacity: 1})
+  showImage() {
+    this.setState({
+      loading: false,
+      opacity: 1
+    })
   }
 
   render () {
@@ -71,16 +72,19 @@ export default class CustomImage extends Component {
         alignItems: 'center',
         justifyContent: 'center'
       }
-      if (renderIndicator) {
-        content = renderIndicator(progress, !loading || !progress)
-      } else {
-        const IndicatorComponent = (typeof indicator === 'function' ? indicator : ActivityIndicator)
-        content = (
-          <IndicatorComponent progress={progress} indeterminate={!loading || !progress} {...indicatorProps} />)
+
+      if (loading) {
+        if (renderIndicator) {
+          content = renderIndicator(progress, !loading || !progress)
+        } else {
+          const IndicatorComponent = (typeof indicator === 'function' ? indicator : ActivityIndicator)
+          content = (<IndicatorComponent progress={progress} indeterminate={!loading || !progress} {...indicatorProps} />)
+        }
       }
     }
     return (
       <CachedImage
+        useQueryParamsInCacheKey={this.props.useQueryParamsInCacheKey || true}
         style={[style, {opacity: this.state.opacity}]}
         source={this.state.source}
         defaultSource={this.props.defaultImage ? this.props.defaultImage : null}
@@ -88,7 +92,7 @@ export default class CustomImage extends Component {
         onError={this.onImageLoadError.bind(this)}
         onProgress={this.handleProgress.bind(this)}
         onLoad={this.onLoad.bind(this)}
-        onLoadEnd={this._showImage}
+        onLoadEnd={this.showImage.bind(this)}
         onLoadStart={this.onStart.bind(this)}>
         {content}
       </CachedImage>
