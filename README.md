@@ -28,6 +28,7 @@ import CustomImage from '@unpourtous/react-native-image-indicator'
 Props | Type | Description
 --- | --- | --- 
 source | string | The remote URL image source.
+useQueryParamsInCacheKey | bool | Config if cache key contains `query` in url, default value is `true` 
 defaultImage | number | The image before remote image loaded
 errorImage | number | The image when remote image loade failed
 renderIndicator | function | The function that render indicator component(exclusion indicator when renderIndicator setted)
