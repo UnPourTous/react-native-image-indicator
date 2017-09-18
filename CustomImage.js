@@ -74,20 +74,28 @@ export default class CustomImage extends Component {
       if (renderIndicator) {
         content = renderIndicator(progress, !loading || !progress)
       } else {
-        const IndicatorComponent = (typeof indicator === 'function' ? indicator : ActivityIndicator)
-        content = (
-          <IndicatorComponent progress={progress} indeterminate={!loading || !progress} {...indicatorProps} />)
+        if (!this.state.loadDone) {
+          const IndicatorComponent = (typeof indicator === 'function' ? indicator : ActivityIndicator)
+          content = (<IndicatorComponent progress={progress} indeterminate={!loading || !progress} {...indicatorProps} />)
+        }
       }
     }
     return (
       <CachedImage
+        useQueryParamsInCacheKey={this.props.useQueryParamsInCacheKey || true}
         style={[style, {opacity: this.state.opacity}]}
         source={this.state.source}
         defaultSource={this.props.defaultImage ? this.props.defaultImage : null}
         loadingIndicatorSource={this.props.defaultImage ? this.props.defaultImage : null}
-        onError={this.onImageLoadError.bind(this)}
+        onError={() => {
+          this.setState({loadDone: true})
+          this.onImageLoadError.bind(this)
+        }}
         onProgress={this.handleProgress.bind(this)}
-        onLoad={this.onLoad.bind(this)}
+        onLoad={() => {
+          this.setState({loadDone: true})
+          this.onLoad.bind(this)
+        }}
         onLoadEnd={this._showImage}
         onLoadStart={this.onStart.bind(this)}>
         {content}
