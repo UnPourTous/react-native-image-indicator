@@ -1,26 +1,28 @@
-/**
- * Created by vengeanliu on 17/3/4.
- */
-
-'use strict'
+'use strict';
 import {
   View,
   Image,
   ActivityIndicator
 } from 'react-native'
 
+/**
+ * Created by vengeanliu on 17/3/4.
+ */
+
+import PropTypes from 'prop-types';
+
 import React, { Component } from 'react'
 import CachedImage from 'react-native-cached-image'
 
 export default class CustomImage extends Component {
   static propTypes = {
-    source: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number, React.PropTypes.object]),
-    errorImage: React.PropTypes.number,
-    defaultImage: React.PropTypes.number,
-    indicator: React.PropTypes.func,
-    indicatorProps: React.PropTypes.object,
-    renderIndicator: React.PropTypes.func,
-    threshold: React.PropTypes.number
+    source: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]),
+    errorImage: PropTypes.number,
+    defaultImage: PropTypes.number,
+    indicator: PropTypes.func,
+    indicatorProps: PropTypes.object,
+    renderIndicator: PropTypes.func,
+    threshold: PropTypes.number
   }
 
   static defaultProps = {
