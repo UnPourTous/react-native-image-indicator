@@ -41,6 +41,6 @@
   },
   "homepage": "https://github.com/UnPourTous/react-native-image-indicator#readme",
   "dependencies": {
-    "react-native-cached-image": "1.3.5"
+    "react-native-cached-image": "1.4.3"
   }
 }
