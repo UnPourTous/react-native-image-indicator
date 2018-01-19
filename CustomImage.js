@@ -12,7 +12,7 @@ import {
 import PropTypes from 'prop-types';
 
 import React, { Component } from 'react'
-import CachedImage from 'react-native-cached-image'
+import {CachedImage} from 'react-native-cached-image'
 
 export default class CustomImage extends Component {
   static propTypes = {
